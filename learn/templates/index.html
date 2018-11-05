@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>背死不偿命系统</title>
+</head>
+    <style>
+        /*  在此处填写叠层样式  */
+        body, html{
+            height: 100%;
+            width: 100%;
+            margin: 0; padding: 0;
+            margin-top: 20px;
+            font-size: 28px;
+        }
+        table {
+            height: 80%;
+            width: 80%;         /*  必须设置一个宽度， margin: 0 auto才能使之居于父组件中央*/
+            margin: 10px auto;  /*  通过设置外边距（margin）中的左右外边距属性为auto使之居于父组件（body）中间*/
+        }
+            table tr{
+                height: 40px;
+                width: 100%;
+            }
+            table>tr>td{
+                height: 100%; width: 33.3%;
+            }
+    </style>
+<body>
+	<table border="1" style="text-align: center;">
+		{% for line in data %}
+		<tr>
+			{% for i in line %}
+				<td>{{ i }}</td>
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
