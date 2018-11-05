@@ -7,7 +7,7 @@ def homepage(request):
 def get_data(request):
 	lists = []
 	import pandas as pd
-	data = pd.read_csv('../WordList.csv')
+	data = pd.read_csv('./WordList.csv')
 	for row in data.values:
 		lists.append(row)
 	return render(request, 'index.html', {'data' : lists})
@@ -15,7 +15,7 @@ def get_data(request):
 def get_random(request, n=20):
 	lists = []
 	import pandas as pd
-	data = pd.read_csv('../WordList.csv')
+	data = pd.read_csv('./WordList.csv')
 	data = data.sample(n)
 	for row in data.values:
 		lists.append(row)
